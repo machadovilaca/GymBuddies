@@ -14,9 +14,18 @@
                         </div>
                     @endif
 
-                    
 
+                <p><b>Name:</b> {{ Auth::user()->name }}<p>
 
+                <p><b>Age:</b> {{ Auth::user()->age }}<p>
+
+                <p><b>Height:</b> {{ Auth::user()->height }}<p>
+
+                <p><b>Weight:</b> {{ Auth::user()->weight }}<p>
+
+                </br>
+
+                <a href=/edit>Edit</a>
 
                 </div>
             </div>
