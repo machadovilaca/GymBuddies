@@ -15,9 +15,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/food', function () {
-    return view('food');
-});
 
 Route::get('/calendar', function () {
     return view('calendar');
@@ -32,3 +29,8 @@ Auth::routes();
 Route::get('/edit', 'HomeController@edit');
 
 Route::post('/edit', 'HomeController@patch');
+
+
+Route::get('/food', 'FoodController@index');
+Route::get('/food/create', 'FoodController@create');
+Route::post('/food', 'FoodController@store');
