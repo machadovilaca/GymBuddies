@@ -19,6 +19,10 @@ Route::get('/food', function () {
     return view('food');
 });
 
+Route::get('/calendar', function () {
+    return view('calendar');
+});
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
