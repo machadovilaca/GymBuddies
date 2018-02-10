@@ -23,11 +23,11 @@
 
                 <p><b>Weight:</b> {{ Auth::user()->weight }}<p>
 
-                </br>
+                
 <div>
 
-                <a href=/food>Food</a>
-                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;           
+                
+                        
                 <a href=/edit>Edit</a>
 </div>
 
@@ -75,6 +75,7 @@
                     <p>Mean Protein: {{$mean_prot}}</p>
                     <p>Mean Fat: {{$mean_fat}}</p>
                     <p>Mean Carbohydrates: {{$mean_carbo}}</p>
+                    <a href=/food>Sea Full Report</a>
                 
             
                 </div>
