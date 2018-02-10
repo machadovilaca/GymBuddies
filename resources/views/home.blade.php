@@ -49,9 +49,34 @@
                     </br>
                         <div>   
                         Se a data do dia for a mesma de um treino da base dados devera aparecer aqui
-                        <a href=/edit>See full week's schedule</a>
+                        <p><a href=/calendar>See full week's schedule</a></p>
                         </div>
 
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card card-default">
+                <div class="card-header">Weakly Consumption Mean</div>
+
+                <div class="card-body">
+                    @if (session('status'))
+                        <div class="alert alert-success">
+                            {{ session('status') }}
+                        </div>
+                    @endif
+        
+                
+                    
+                    <p>Mean Protein: {{$mean_prot}}</p>
+                    <p>Mean Fat: {{$mean_fat}}</p>
+                    <p>Mean Carbohydrates: {{$mean_carbo}}</p>
+                
+            
                 </div>
             </div>
         </div>
