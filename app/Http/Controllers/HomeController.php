@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Auth;
 
 class HomeController extends Controller
 {
@@ -25,4 +26,25 @@ class HomeController extends Controller
     {
         return view('home');
     }
+
+    public function edit()
+    {
+        return view('edit');
+    }
+
+    public function patch(Request $request)
+    {
+        $user = Auth::user();
+
+        $user->age = $request['age'];
+        $user->height = $request['height'];
+        $user->weight = $request['weight'];
+
+        $user->save();
+
+        Auth::setUser($user);
+        
+        return view('home');
+    }
+
 }
