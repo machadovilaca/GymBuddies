@@ -39,8 +39,10 @@
            
            
                   </style>
-              </head>
-                <body>
+        <head/>
+    
+            
+        <body>
                  
                     <div class="content">
                           <div class="title m-b-md" style="text-align:center" style="color: red">
@@ -49,15 +51,15 @@
 
                          
                       </div>
-                    </div>
-                </body>
-    </head>  
-        <body>
+                    
+                
+              
+                
             <div style="position: fixed; z-index: -99; top: -10%; left: -12%; width: 100%; height: 100%">
               <iframe frameborder="0" height="120%" width="120%" 
-                src="https://www.youtube.com/embed/dy2UQofvwH8?autoplay=1" allowfullscreen loop="true">
+                src="https://www.youtube.com/embed/dy2UQofvwH8?autoplay=1" allowfullscreen loop="true" >
               </iframe>
             </div>
         </body>
-    
+
 </html>
