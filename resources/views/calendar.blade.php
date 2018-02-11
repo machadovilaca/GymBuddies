@@ -3,16 +3,12 @@
 <head>
 	<meta name="csrf-token" content="{{ csrf_token() }}">
     <meta charset="utf-8">
-    <!-- This file has been downloaded from Bootsnipp.com. Enjoy! -->
-    <title>Calendar Design - Bootsnipp.com</title>
+
+    <title>GymBuddies</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
     <style type="text/css">
-        /*!
- * FullCalendar v1.6.4 Stylesheet
- * Docs & License: http://arshaw.com/fullcalendar/
- * (c) 2013 Adam Shaw
- */
+
  @import url('https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i');
 td.fc-day {
 
@@ -942,7 +938,6 @@ $.ajax({
 		text-align: center;
 		font-size: 14px;
 		font-family: 'Roboto', sans-serif;
-		background:url(http://www.digiphotohub.com/wp-content/uploads/2015/09/bigstock-Abstract-Blurred-Background-Of-92820527.jpg);
 		}
 		
 	#wrap {
