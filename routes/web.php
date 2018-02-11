@@ -28,6 +28,10 @@ Route::get('/food', 'FoodController@index');
 Route::get('/food/create', 'FoodController@create');
 Route::post('/food', 'FoodController@store');
 
+Route::get('/calendarjs', 'CalendarjsController@index');
+Route::get('/grab_calendar', 'CalendarjsController@grab_calendar');
+
+
 Route::get('/calendar?week={week}&year={year}', 'CalendarController@index');
 
 Route::get('/calendar', function () {

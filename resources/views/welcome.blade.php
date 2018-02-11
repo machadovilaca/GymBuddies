@@ -45,7 +45,7 @@
         <body>
                  
                     <div class="content">
-                          <div class="title m-b-md" style="text-align:center" style="color: red">
+                          <div class="title m-b-md">
                                <a href="{{ url('/home') }}" > GYM BUDDIES</a>
                           </div>
 
