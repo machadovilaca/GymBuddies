@@ -111,7 +111,7 @@
         <header class="w3-container w3-center w3-white" style="padding:0px">
         <div class=" w3-grayscale" >
             <div class="w3-half" style="content-align:left">
-                <img src="photo.jpg"  alt="work" style="width:100%;margin-left=0px " >
+                <img src="photo.jpg"  alt="work" style="width:100%;margin-left=0px" >
             
             </div>
         
