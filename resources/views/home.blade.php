@@ -49,6 +49,11 @@
                     </br>
                         <div>   
                         Se a data do dia for a mesma de um treino da base dados devera aparecer aqui
+                        <?php if(0<count(CalendarEntry::where('date','<',Carbon::now()->subDays(1)))) { ?>
+                        Cao
+                        <?php } else { ?>
+                        Gato
+                        <?php } ?> 
                         <p><a href=/calendar>See full week's schedule</a></p>
                         </div>
 
@@ -92,25 +97,7 @@
 
                 <div class="card-body">
                
-                    <b> Gain muscle </b>
-                        <ul>
-                            <li href=""> </li>
-                            <li href=""> </li>
-                            <li href=""> </li>
-                        </ul>
-                    <b> Lose weight </b>
-                        <ul>
-                            <li href=""> </li>
-                            <li href=""> </li>
-                            <li href=""> </li>
-                        </ul>
-                    <b> Conditioning  </b>
-                        <ul>
-                            <li href=""> </li>
-                            <li href=""> </li>
-                            <li href=""> </li>
-                        </ul>
-
+                   
                 </div>
             </div>
         </div>
