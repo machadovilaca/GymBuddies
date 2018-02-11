@@ -11,6 +11,26 @@
     <title>GymBuddies</title>
 
     <!-- Styles -->
+    <style>
+            .nextprev     {lpadding: 70px 25px;
+                           width: 100%;
+                           background: #045FB4;
+                           font-family: Verdana, sans-serif;
+                           text-decoration:none;
+            }
+            a             {color: white;
+                           font-size: 20px;
+                           text-decoration:none; 
+                           font-family: Marker Felt, fantasy;
+            }
+            table         {border-collapse: collapse;
+                           width: 100%;
+            }
+            table, td, th {border: 1px solid black;
+                           font-family: Verdana, sans-serif;
+                           height: 50%
+            }
+        </style>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
