@@ -39,6 +39,12 @@
             width: 35%;
             
         }
+        .poem {
+          padding:5rem;
+          align-content: center;
+          margin-top: 15%;
+          font-size:3rem
+        }
 
     </style>
 </head>
@@ -71,6 +77,9 @@
                                     {{ Auth::user()->name }} <span class="caret"></span>
                                 </a>
                                 <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <a class="dropdown-item" href="\home">
+                                        Home
+                                    </a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
@@ -117,7 +126,7 @@
         
         
         <div class="w3-half">
-            <div style="padding:2.5rem"> <h5 > 
+            <div class="poem"> <h5 > 
                     <p>This web app redefines the way you keep track of your workouts and diet.</p>
                     <p>We accomplish that by having a simple user interface that isn't overwhelmingly complex to the more casual user. </p>
             </h5></div>       
