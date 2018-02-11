@@ -28,6 +28,7 @@ Route::get('/food', 'FoodController@index');
 Route::get('/food/create', 'FoodController@create');
 Route::post('/food', 'FoodController@store');
 
+<<<<<<< HEAD
 Route::get('/calendarjs', 'CalendarjsController@index');
 Route::get('/grab_calendar', 'CalendarjsController@grab_calendar');
 
@@ -42,3 +43,8 @@ Route::get('/calendar', function () {
 });
 
 Route::get('/calendar/create', 'CalendarController@create');
+=======
+Route::get('/calendar', 'CalendarController@index');
+Route::get('/calendar/create/{arg}', 'CalendarController@create');
+Route::post('/calendar', 'CalendarController@store');
+>>>>>>> 7585b02caf7e5990d5fba0018a2b8ff4bbc7f3b1

@@ -2,8 +2,8 @@
 
 @section('content')
 <?php
-$year = $year2 = (isset($_GET['year'])) ? $_GET['year'] : date("Y");
-$week = $week2 = (isset($_GET['week'])) ? $_GET['week'] : date('W');
+$year2 = $year;
+$week2 = $week;
 
 if($week > 52) {
     $year = $year2++;
@@ -50,8 +50,9 @@ if($week2 < 10) {
 }
 for($day2= 1; $day2 <= 7; $day2++) {
     $d2 = strtotime($year ."W". $week2 . $day2);
+    $nmonth = date('m',strtotime(date('M', $d)));
 
-    echo "<td>". date('l', $d2) ."<br>". date('d M', $d2) ."</td>";
+    echo "<td>". "<a href=/calendar/create/" . $year2 . "-" . $nmonth. "-" . date('d', $d2) .">Insert</td>";
 }
 ?>
 

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
+use Auth;
 
 class CalendarController extends Controller
 {
@@ -11,9 +13,28 @@ class CalendarController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($week, $year)
+    public function index()
     {
-        return view('calendar.index');
+        $week = Input::get('week');
+        $year = Input::get('year');
+
+        if ($year == "" || $week == "" ) {
+            $year = (isset($_GET['year'])) ? $_GET['year'] : date("Y");
+            $week = (explode ( "0" , (isset($_GET['week'])) ? $_GET['week'] : date('W')))[1]; 
+
+            return redirect('/calendar?week='.$week.'&year='.$year);
+        }
+        else {
+
+            date("Y-m-d", strtotime('monday this week'));
+            date("Y-m-d", strtotime('sunday this week'));
+
+            $workouts =  \App\CalendarEntry::where('date','>', '2012-11-18')->where('date','<', '2012-11-18')->get();
+
+            return view('calendar.index')
+                ->with('week', $week)
+                ->with('year', $year);
+        }
     }
 
     /**
@@ -21,9 +42,10 @@ class CalendarController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($arg)
     {
-        return view('calendar.create');
+        return view('calendar.create')
+            ->with('arg', $arg);
     }
 
     /**
@@ -34,7 +56,16 @@ class CalendarController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $in = new \App\CalendarEntry;
+
+        $in->date = $request['date'];
+        $in->title = $request['workouts'];
+
+        $in->user()->associate(Auth::user()->id);
+
+        $in->save();
+
+        return redirect('/calendar');
     }
 
     /**
