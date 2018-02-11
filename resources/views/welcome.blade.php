@@ -103,7 +103,7 @@
     <!-- Header -->
     <header class="w3-container w3-center w3-padding-48" style="backgroud-color:#ff3300" >
       <div><h1 style="font-size:4rem"><b>GymBuddies</b></h1></div>
-      <h6>The app that won't <span class="w3-tag">make you sweet</span></h6>
+      <h6>The app that won't <span class="w3-tag">make you sweat</span></h6>
     </header>
         <br>
         
@@ -113,31 +113,14 @@
             <div class="w3-half" style="content-align:left">
                 <img src="photo.jpg"  alt="work" style="width:100%;margin-left=0px" >
             
-<<<<<<< HEAD
-        <body>
-                 
-                    <div class="content">
-                          <div class="title m-b-md">
-                               <a href="{{ url('/home') }}" > GYM BUDDIES</a>
-                          </div>
-
-                         
-                      </div>
-                    
-                
-              
-                
-            <div style="position: fixed; z-index: -99; top: -10%; left: -12%; width: 100%; height: 100%">
-              <iframe frameborder="0" height="120%" width="120%" 
-                src="https://www.youtube.com/embed/dy2UQofvwH8?autoplay=1" allowfullscreen loop="true" >
-              </iframe>
-=======
->>>>>>> 7585b02caf7e5990d5fba0018a2b8ff4bbc7f3b1
             </div>
         
         
         <div class="w3-half">
-            <div style="padding:2.5rem"> <h5 > Insert Motivational Quote here! </h5></div>       
+            <div style="padding:2.5rem"> <h5 > 
+                    <p>This web app redefines the way you keep track of your workouts and diet.</p>
+                    <p>We accomplish that by having a simple user interface that isn't overwhelmingly complex to the more casual user. </p>
+            </h5></div>       
         </div>
       </div>
       </header>
@@ -147,7 +130,7 @@
     <!-- BUILDING THE ACTUAL THING -->
     <header class="w3-container w3-center w3-white"  style="margin-bottom:0px">
         <div class=" w3-grayscale" style="height:100px">
-            <p style="padding:50px"> This was made by people</p>
+            <p style="padding:50px"> This was made by Team8</p>
         </div>
     </header>
 </body>
