@@ -10,7 +10,7 @@ class CalendarEntry extends Model
     protected $table = 'calendarentries';
 
     protected $fillable = [
-        'user_id', 'date', 'title','description',
+        'user_id', 'date', 'title',
     ];
     /*protected $hidden = [
         ,

@@ -54,7 +54,16 @@ class HomeController extends Controller
 
         Auth::setUser($user);
         
-        return view('home');
+        $user_id = Auth::user()->id;
+
+        $old = Carbon::now()->subDays(8);
+        $mean_prot =  \App\Food::where('user_id','=', $user_id)->where('created_at','>',$old)->avg('protein');
+            $mean_fat =  \App\Food::where('user_id','=', $user_id)->where('created_at','>',$old)->avg('fat');
+            $mean_carbo =  \App\Food::where('user_id','=', $user_id)->where('created_at','>',$old)->avg('carbohydrates');
+            return view('home')
+                    ->with('mean_prot', $mean_prot)
+                    ->with('mean_fat', $mean_fat)
+                    ->with('mean_carbo', $mean_carbo);
     }
 
 }

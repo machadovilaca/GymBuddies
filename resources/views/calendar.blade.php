@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+	<meta name="csrf-token" content="{{ csrf_token() }}">
     <meta charset="utf-8">
     <!-- This file has been downloaded from Bootsnipp.com. Enjoy! -->
     <title>Calendar Design - Bootsnipp.com</title>
@@ -851,6 +852,41 @@ $.ajax({
 							);
 						}
 						calendar.fullCalendar('unselect');
+						console.log(JSON.stringify({"title": title,"start": start}));
+/*						$.ajax({
+							type: "POST",
+							url: '/put_calendar',
+							dataType: 'json',
+							contentType: 'application/json',
+							data: {functionname: 'store', arguments: [JSON.stringify({"title": title,"start": start})]
+								},
+							success: function(){console.log('saved');},
+							error: function(e) {
+									console.log('Pum!\n' + e.responseText);
+									}
+						});*/
+						
+
+						$.ajaxSetup({
+  							headers: {
+    							'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+  							}
+						});
+
+						var options = {
+  							url: "/put_calendar",
+  							dataType: "json",
+  							type: "POST",
+  							data: {"title": title,"start": start}, // Our valid JSON string
+  							success: function( data, status, xhr ) {
+  							   console.log('saved');
+  							},
+  							error: function( xhr, status, error ) {
+  							    console.log('pum');
+  							}
+						};
+						$.ajax( options );
+
 					},
 					droppable: true, // this allows things to be dropped onto the calendar !!!
 					drop: function(date, allDay) { // this function is called when something is dropped

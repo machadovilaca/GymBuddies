@@ -2,9 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Input;
+use App\CalendarEntry;
 use Auth;
+use Response;
+use Illuminate\Http\Request;
+use Carbon\Carbon;
+use Illuminate\Support\Facades\Input;
+
 
 class CalendarController extends Controller
 {
@@ -15,26 +19,9 @@ class CalendarController extends Controller
      */
     public function index()
     {
-        $week = Input::get('week');
-        $year = Input::get('year');
-
-        if ($year == "" || $week == "" ) {
-            $year = (isset($_GET['year'])) ? $_GET['year'] : date("Y");
-            $week = (explode ( "0" , (isset($_GET['week'])) ? $_GET['week'] : date('W')))[1]; 
-
-            return redirect('/calendar?week='.$week.'&year='.$year);
-        }
-        else {
-
-            date("Y-m-d", strtotime('monday this week'));
-            date("Y-m-d", strtotime('sunday this week'));
-
-            $workouts =  \App\CalendarEntry::where('date','>', '2012-11-18')->where('date','<', '2012-11-18')->get();
-
-            return view('calendar.index')
-                ->with('week', $week)
-                ->with('year', $year);
-        }
+        //$calendars = CalendarEntry::where('calendarentries.user_id', '=', Auth::user()->id);
+        //return view('calendarjs')->with('calendars', $calendars);
+        return view('calendar');
     }
 
     /**
@@ -42,10 +29,9 @@ class CalendarController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create($arg)
+    public function create()
     {
-        return view('calendar.create')
-            ->with('arg', $arg);
+        return view('calendar');
     }
 
     /**
@@ -58,14 +44,18 @@ class CalendarController extends Controller
     {
         $in = new \App\CalendarEntry;
 
-        $in->date = $request['date'];
-        $in->title = $request['workouts'];
+    
+        $data = $request->all();
+
+        $in->date = (new Carbon($data['start']))->format('Y-m-d');
+        //$requestio["start"];//"2018-02-12"; //(new Carbon($requestio["start"]))->format('Y-m-d');
+        $in->title = $data['title'];
 
         $in->user()->associate(Auth::user()->id);
 
         $in->save();
 
-        return redirect('/calendar');
+        //return redirect('/calendar');
     }
 
     /**
@@ -112,4 +102,15 @@ class CalendarController extends Controller
     {
         //
     }
+
+    public function grab_calendar(Request $request){
+        if ($request->isMethod('get')){    
+            return Response::json(array(
+                    'success' => true,
+                    'data'   => CalendarEntry::where('calendarentries.user_id', '=', Auth::user()->id)->get()
+                )); 
+            //response()->json(CalendarEntry::where('calendarentries.user_id', '=', Auth::user()->id)); 
+        }
+    }
+
 }
