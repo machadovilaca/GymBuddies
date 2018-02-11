@@ -17,7 +17,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card card-default">
+            <div class="card card-default" style="font-weight: bold;">
                 <div class="card-header">Weakly Consumption Mean</div>
 
                 <div class="card-body">
@@ -43,7 +43,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card card-default">
+            <div class="card card-default" style="font-weight: bolder;">
                 <div class="card-header">Consumption Report</div>
 
                 <div class="card-body">
@@ -71,4 +71,3 @@
 </div>
                 
 @endsection
-        
