@@ -19,9 +19,9 @@
                            text-decoration:none;
             }
             a             {color: white;
-                           font-size: 20px;
+                           /*font-size: 20px;*/
                            text-decoration:none; 
-                           font-family: Marker Felt, fantasy;
+                
             }
             table         {border-collapse: collapse;
                            width: 100%;
