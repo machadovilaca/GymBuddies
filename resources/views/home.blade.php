@@ -83,4 +83,37 @@
         </div>
     </div>
 </div>
+
+<div class="container">
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card card-default">
+            <div class="card-header"> Developers choice </div>
+
+                <div class="card-body">
+               
+                    <b> Gain muscle </b>
+                        <ul>
+                            <li href=""> </li>
+                            <li href=""> </li>
+                            <li href=""> </li>
+                        </ul>
+                    <b> Lose weight </b>
+                        <ul>
+                            <li href=""> </li>
+                            <li href=""> </li>
+                            <li href=""> </li>
+                        </ul>
+                    <b> Conditioning  </b>
+                        <ul>
+                            <li href=""> </li>
+                            <li href=""> </li>
+                            <li href=""> </li>
+                        </ul>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 @endsection
